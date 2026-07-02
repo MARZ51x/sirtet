@@ -1,26 +1,71 @@
 @import "tailwindcss";
 
+/* Default theme (Midnight Neon) as the SSR fallback; applyTheme() and the
+   pre-paint script override these with inline custom properties on <html>. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --st-bg: #0b0f1a;
+  --st-surface: #131a2b;
+  --st-surface-2: #1b2438;
+  --st-border: #26314d;
+  --st-text: #e8ecf8;
+  --st-text-muted: #8b94ad;
+  --st-accent: #22d3ee;
+  --st-on-accent: #06121a;
+  --st-danger: #f43f5e;
+  --st-board-bg: #0d1322;
+  --st-board-grid: #1e2a44;
+  --st-piece-i: #22d3ee;
+  --st-piece-o: #facc15;
+  --st-piece-t: #c084fc;
+  --st-piece-s: #4ade80;
+  --st-piece-z: #f43f5e;
+  --st-piece-j: #60a5fa;
+  --st-piece-l: #fb923c;
+  --st-ghost: rgba(232, 236, 248, 0.22);
+  --st-glow: #22d3ee;
+
+  /* user background image controls (settings-driven) */
+  --bg-dim: 0.55;
+  --bg-blur: 6px;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-bg: var(--st-bg);
+  --color-surface: var(--st-surface);
+  --color-surface-2: var(--st-surface-2);
+  --color-border: var(--st-border);
+  --color-text: var(--st-text);
+  --color-text-muted: var(--st-text-muted);
+  --color-accent: var(--st-accent);
+  --color-on-accent: var(--st-on-accent);
+  --color-danger: var(--st-danger);
+  --color-board-bg: var(--st-board-bg);
+  --color-board-grid: var(--st-board-grid);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  color-scheme: dark;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--st-bg);
+  color: var(--st-text);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  min-height: 100dvh;
+}
+
+:focus-visible {
+  outline: 2px solid var(--st-accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
