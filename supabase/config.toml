@@ -144,10 +144,9 @@ max_catalogs = 2
 # [storage.analytics.buckets.my-warehouse]
 
 # Store vector embeddings in S3 for large and durable datasets
+# (disabled — unused, and not available on the free tier for config push)
 [storage.vector]
-enabled = true
-max_buckets = 10
-max_indexes = 5
+enabled = false
 
 # Vector Buckets is available to Supabase Pro plan.
 # [storage.vector.buckets.documents-openai]
@@ -247,6 +246,19 @@ otp_expiry = 3600
 # [auth.email.template.invite]
 # subject = "You have been invited"
 # content_path = "./supabase/templates/invite.html"
+
+# Production overrides applied by `supabase config push` (auth URLs differ;
+# the email templates below are shared by local and production).
+[remotes.production]
+project_id = "hlclnmfxcoupeeqkycui"
+
+[remotes.production.auth]
+site_url = "https://sirtet-two.vercel.app"
+additional_redirect_urls = [
+  "https://sirtet-two.vercel.app",
+  "http://localhost:3000",
+  "http://localhost:3001",
+]
 
 # Token-hash templates matching the production dashboard configuration —
 # links route through /auth/confirm so local and prod behave identically.
