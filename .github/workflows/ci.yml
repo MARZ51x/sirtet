@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      # dummy values so the strict env validation passes at build time;
+      # real values live in Vercel project settings
+      NEXT_PUBLIC_SUPABASE_URL: https://ci-placeholder.supabase.co
+      NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: sb_publishable_ci_placeholder
+      SUPABASE_SECRET_KEY: sb_secret_ci_placeholder_x
+      GAME_SESSION_SECRET: ci_placeholder_secret_at_least_32_chars_long
+      NEXT_PUBLIC_SITE_URL: https://ci-placeholder.example.com
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm run test:coverage # engine coverage gate: 80%
+      - run: npm run build
