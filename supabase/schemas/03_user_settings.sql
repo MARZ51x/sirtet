@@ -15,6 +15,10 @@ create trigger user_settings_set_updated_at
 
 alter table public.user_settings enable row level security;
 
+-- Explicit privileges: signed-in users manage their own row (RLS scopes it).
+grant select, insert, update on public.user_settings to authenticated;
+grant all on public.user_settings to service_role;
+
 -- Settings are non-abusable: clients read/write their own row directly.
 -- ((select auth.uid())) lets Postgres cache the value per statement.
 create policy "read own settings"

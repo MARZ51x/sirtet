@@ -1,0 +1,9 @@
+<h2>Reset your Sirtet password</h2>
+<p>Click below to set a new password. This link works once and expires soon:</p>
+<p>
+  <a
+    href="{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=recovery&next=/reset-password"
+    >Reset your password</a
+  >
+</p>
+<p>If you didn't request this, you can ignore this email.</p>

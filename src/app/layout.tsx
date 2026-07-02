@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import Link from "next/link";
+import { Analytics } from "@vercel/analytics/next";
 import { Geist, Geist_Mono } from "next/font/google";
 import BackgroundLayer from "@/components/BackgroundLayer";
 import Header from "@/components/Header";
@@ -59,6 +60,7 @@ export default function RootLayout({
             </Link>
           </footer>
         </SettingsProvider>
+        <Analytics />
       </body>
     </html>
   );

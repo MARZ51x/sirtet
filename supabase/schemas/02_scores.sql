@@ -36,6 +36,11 @@ create index scores_user_created_idx
 
 alter table public.scores enable row level security;
 
+-- Explicit privileges: clients read only; the service role owns all writes
+-- (there is deliberately NO client insert path at either layer).
+grant select on public.scores to anon, authenticated;
+grant all on public.scores to service_role;
+
 create policy "scores are publicly readable"
   on public.scores for select
   to anon, authenticated

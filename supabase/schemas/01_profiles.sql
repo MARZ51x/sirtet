@@ -19,6 +19,11 @@ create trigger profiles_set_updated_at
 
 alter table public.profiles enable row level security;
 
+-- Explicit privileges (the diff tool normalizes grants, so declare them):
+-- clients only ever read profiles; all writes go through the service role.
+grant select on public.profiles to anon, authenticated;
+grant all on public.profiles to service_role;
+
 -- Usernames are public (leaderboards). No email or PII lives here — ever.
 create policy "profiles are publicly readable"
   on public.profiles for select
