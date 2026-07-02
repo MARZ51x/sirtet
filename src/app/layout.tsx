@@ -1,5 +1,9 @@
 import type { Metadata, Viewport } from "next";
+import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
+import BackgroundLayer from "@/components/BackgroundLayer";
+import Header from "@/components/Header";
+import { SettingsProvider } from "@/lib/settings/SettingsProvider";
 import { PRE_PAINT_SNIPPET } from "@/lib/theme/themes";
 import "./globals.css";
 
@@ -43,7 +47,19 @@ export default function RootLayout({
       <head>
         <script dangerouslySetInnerHTML={{ __html: PRE_PAINT_SNIPPET }} />
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <SettingsProvider>
+          <BackgroundLayer />
+          <Header />
+          <main className="flex flex-1 flex-col">{children}</main>
+          <footer className="flex h-10 items-center justify-center gap-4 border-t border-border/60 text-xs text-text-muted">
+            <span>Sirtet</span>
+            <Link href="/privacy" className="hover:text-text">
+              Privacy
+            </Link>
+          </footer>
+        </SettingsProvider>
+      </body>
     </html>
   );
 }
