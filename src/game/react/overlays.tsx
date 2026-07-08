@@ -44,7 +44,7 @@ export function StartOverlay({
   return (
     <OverlayShell>
       <h1 className="mb-1 text-center text-3xl font-black tracking-[0.3em] text-accent">
-        SIRTET
+        CASCADE
       </h1>
       <p className="mb-5 text-center text-sm text-text-muted">
         Stack. Clear. Climb the board.
@@ -276,7 +276,7 @@ export function GameOverOverlay({
           ["Time", formatTicksAsClock(stats.ticks)],
           ["Pieces", String(stats.piecesPlaced)],
           ["PPS", stats.pps.toFixed(2)],
-          ["Sirtets", String(stats.quads)],
+          ["Cascades", String(stats.quads)],
         ].map(([label, value]) => (
           <div key={label} className="rounded-lg bg-surface-2 p-2">
             <p className="text-[10px] font-semibold tracking-widest text-text-muted">
@@ -365,7 +365,7 @@ export function TutorialOverlay({ onClose }: { onClose: () => void }) {
       </h2>
       <p className="mb-3 text-sm text-text-muted">
         Stack falling pieces and fill complete rows to clear them. Clear four
-        rows at once for a <span className="font-bold text-accent">SIRTET</span>.
+        rows at once for a <span className="font-bold text-accent">CASCADE</span>.
         Back-to-back difficult clears and combos score extra. The game ends
         when the stack reaches the top.
       </p>

@@ -148,7 +148,7 @@ export class SfxPlayer {
         this.arpeggio("sawtooth", [523, 659, 784, 1047], 0.05, 0.08, t);
         break;
       case "clear4": {
-        // the "SIRTET!" fanfare
+        // the "CASCADE!" fanfare
         const notes = [523, 659, 784, 1047, 1319, 1568];
         this.arpeggio("sawtooth", notes, 0.045, 0.2, t, {
           type: "lowpass",

@@ -392,7 +392,7 @@ export default function GameShell() {
               ? "T-SPIN MINI"
               : `T-SPIN ${names[e.lines] ?? ""}`.trim(),
           );
-        } else if (e.lines === 4) pushPopup("SIRTET!");
+        } else if (e.lines === 4) pushPopup("CASCADE!");
         else if (e.lines === 3) pushPopup("TRIPLE!");
         else if (e.lines === 2) pushPopup("DOUBLE!");
         if (e.b2b) pushPopup("BACK-TO-BACK");
@@ -503,7 +503,7 @@ export default function GameShell() {
               <canvas
                 ref={boardCanvasRef}
                 className="absolute inset-0"
-                aria-label="Sirtet playfield"
+                aria-label="Cascade playfield"
                 role="img"
               />
               <canvas ref={pieceCanvasRef} className="absolute inset-0" />

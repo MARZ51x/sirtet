@@ -20,11 +20,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Sirtet — falling-block puzzle",
-    template: "%s · Sirtet",
+    default: "Cascade — falling-block puzzle",
+    template: "%s · Cascade",
   },
   description:
-    "Sirtet is a fast, satisfying falling-block puzzle game with online leaderboards, custom themes, and three game modes.",
+    "Cascade is a fast, satisfying falling-block puzzle game with online leaderboards, custom themes, and three game modes.",
 };
 
 export const viewport: Viewport = {
@@ -54,7 +54,7 @@ export default function RootLayout({
           <Header />
           <main className="flex flex-1 flex-col">{children}</main>
           <footer className="flex h-10 items-center justify-center gap-4 border-t border-border/60 text-xs text-text-muted">
-            <span>Sirtet</span>
+            <span>Cascade</span>
             <Link href="/privacy" className="hover:text-text">
               Privacy
             </Link>

@@ -7,7 +7,7 @@ export default function PrivacyPage() {
     <div className="mx-auto w-full max-w-2xl flex-1 px-4 py-8 text-sm leading-6 text-text">
       <h1 className="mb-4 text-2xl font-bold">Privacy</h1>
       <p className="mb-4 text-text-muted">
-        Sirtet stores the minimum needed to run a leaderboard.
+        Cascade stores the minimum needed to run a leaderboard.
       </p>
 
       <h2 className="mb-1 font-semibold">What we store</h2>
