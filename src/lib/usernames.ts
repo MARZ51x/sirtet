@@ -14,6 +14,7 @@ const RESERVED = new Set([
   "root",
   "system",
   "sirtet",
+  "cascade",
   "support",
   "staff",
   "official",

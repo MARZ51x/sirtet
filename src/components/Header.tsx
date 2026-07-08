@@ -23,7 +23,7 @@ export default async function Header() {
         href="/"
         className="text-lg font-black tracking-[0.25em] text-accent"
       >
-        SIRTET
+        CASCADE
       </Link>
       <nav className="flex items-center gap-4 text-sm font-medium">
         <Link href="/" className="text-text-muted hover:text-text">

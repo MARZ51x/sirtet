@@ -263,11 +263,11 @@ additional_redirect_urls = [
 # Token-hash templates matching the production dashboard configuration —
 # links route through /auth/confirm so local and prod behave identically.
 [auth.email.template.confirmation]
-subject = "Confirm your Sirtet account"
+subject = "Confirm your Cascade account"
 content_path = "./supabase/templates/confirmation.html"
 
 [auth.email.template.recovery]
-subject = "Reset your Sirtet password"
+subject = "Reset your Cascade password"
 content_path = "./supabase/templates/recovery.html"
 
 # Uncomment to customize notification email template

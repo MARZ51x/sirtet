@@ -216,7 +216,7 @@ describe("Engine — top-out", () => {
 });
 
 describe("Engine — line clears", () => {
-  it("scores a quad (SIRTET) with correct points and events", () => {
+  it("scores a quad (CASCADE) with correct points and events", () => {
     const seed = seedWithFirstPiece("I");
     const engine = new Engine(MODES.marathon, seed);
     const events = collectEvents(engine);

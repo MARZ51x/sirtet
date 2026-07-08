@@ -1,4 +1,4 @@
-# Sirtet
+# Cascade
 
 A fast, satisfying falling-block puzzle game with online leaderboards, custom
 themes, and synthesized sound — built with Next.js + Supabase, deployed on
